@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/* GENERAL STYLES / LAYOUT */
+body {
+    background: #AAA;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    padding: 0;
+    min-width: 300px;
+}
+
+header {
+    height: 4rem;
+    margin-right: 2em;
+}
+h1, h2, h3, p, ul {
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    display: block;
+    ul {
+        text-align: right;
+    }
+}
+nav > ul > li {
+    display: inline-block;
+}
+
+/* MORE SPECIFIC STYLES */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.jumbo {
+    border: 3px solid black;
+    background: #AAA;
+    padding: 2rem;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.nav-link {
+
+}
+
+.nav-item {
+    color: white;
+    border: 3px solid white;
+    background: orange;
+}
+
+.projects {
+    padding: 0;
+    margin: 3rem auto 0;
+}
+
+.project {
+    display: inline-block;
+    text-align: center;
+}
+
+.item-wrapper {
+    background: white;
+    padding: 0.5em;
+}
