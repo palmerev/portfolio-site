@@ -1,3 +1,5 @@
+$break-small: 320px;
+
 .intro-footer {
     position: absolute;
     bottom: 0.5em;
@@ -15,11 +17,15 @@
     height: 100%;
     background:
         linear-gradient(
-            rgba(75%, 75%, 75%, 0.45),
-            rgba(75%, 75%, 75%, 0.45)
+            darken(rgba(20, 150, 20, 0.50), 20%),
+            rgba(0, 100, 100, 0.50)
         ),
         url('red-panda.jpg');
-    background-size: cover;
+    // background-repeat: no-repeat;
+    background-size: contain;
+    @media screen and (min-width: $break-small) {
+        background-size: cover;
+    }
 }
 
 .navbar-default {
@@ -36,8 +42,6 @@
         margin-bottom: 2em;
     }
     p {
-        // color: black;
         font-size: 1.2em;
-        font-weight: bold;
     }
 }
