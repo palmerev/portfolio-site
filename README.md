@@ -1,5 +1,5 @@
-# Portfolio Site
+# My Portfolio Site
 
-This is the source code for my personal website. It's built with HTML5, SCSS, and Javascript.
+Built with Bootstrap 3 and Sass/SCSS.
 
-Compiling the SCSS file(s) requires Sass. From the `css` directory, run `sass --update filename.scss:filename.css`.
+Run `sass --update styles.scss:styles.css` to compile the stylesheet.
