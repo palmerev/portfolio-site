@@ -1,0 +1,43 @@
+.intro-footer {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.full-width {
+    color: white;
+    font-size: 1.3em;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(
+            rgba(75%, 75%, 75%, 0.45),
+            rgba(75%, 75%, 75%, 0.45)
+        ),
+        url('red-panda.jpg');
+    background-size: cover;
+}
+
+.navbar-default {
+    color: white;
+    background-color: transparent;
+    border: none;
+    & .navbar-nav > li > a {
+        color: white;
+    }
+}
+
+.intro-bio {
+    h1 {
+        margin-bottom: 2em;
+    }
+    p {
+        // color: black;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}
