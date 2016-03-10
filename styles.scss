@@ -45,3 +45,13 @@ $break-small: 320px;
         font-size: 1.2em;
     }
 }
+
+.thumbnail img {
+    max-height: 260px;
+}
+
+.intramusical-thumbnail {
+    $pad: 20px;
+    padding-top: $pad;
+    padding-bottom: $pad;
+}
