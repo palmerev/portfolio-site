@@ -1,3 +1,4 @@
 # SCSS files
 *.map
 *.sass-cache
+styles.css
