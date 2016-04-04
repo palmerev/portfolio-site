@@ -1,0 +1,61 @@
+body {
+  background: linear-gradient(
+      rgba(10%, 10%, 10%, 0.45),
+      rgba(10%, 10%, 10%, 0.45)
+    );
+  background:
+    linear-gradient(
+        rgba(10%, 10%, 10%, 0.45),
+        rgba(10%, 10%, 10%, 0.45)
+    ),
+    url('https://source.unsplash.com/R5fIqR8nPu0');
+  background-size: cover;
+
+$break-small: 320px;
+
+.intro-footer {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.full-width {
+    color: white;
+    font-size: 1.3em;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-default {
+    color: white;
+    background-color: transparent;
+    border: none;
+    & .navbar-nav > li > a {
+        color: white;
+    }
+}
+
+.intro-bio {
+    h1 {
+        margin-bottom: 2em;
+    }
+    p {
+        // color: black;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}
+
+.thumbnail img {
+    max-height: 260px;
+}
+
+.intramusical-thumbnail {
+    $pad: 20px;
+    padding-top: $pad;
+    padding-bottom: $pad;
+}
