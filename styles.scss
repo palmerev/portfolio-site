@@ -10,6 +10,13 @@ body {
     ),
     url('https://source.unsplash.com/R5fIqR8nPu0');
   background-size: cover;
+
+$break-small: 320px;
+
+.intro-footer {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
 }
 
 .section {
@@ -41,4 +48,14 @@ body {
         font-size: 1.2em;
         font-weight: bold;
     }
+}
+
+.thumbnail img {
+    max-height: 260px;
+}
+
+.intramusical-thumbnail {
+    $pad: 20px;
+    padding-top: $pad;
+    padding-bottom: $pad;
 }
