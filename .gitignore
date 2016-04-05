@@ -5,6 +5,7 @@ styles.css
 
 # Python files
 __pycache__/
+*.pyc
 
 # Database files
 *.sqlite3
