@@ -8,20 +8,14 @@ $break-small: 320px;
 }
 
 body {
+  $defaultGray: rgba(10%, 10%, 10%, 0.45);
   color: white;
-  background: linear-gradient(
-      rgba(10%, 10%, 10%, 0.45),
-      rgba(10%, 10%, 10%, 0.45)
-    );
-  background:
-    linear-gradient(
-        rgba(10%, 10%, 10%, 0.45),
-        rgba(10%, 10%, 10%, 0.45)
-    ),
+  background: linear-gradient($defaultGray, $defaultGray);
+  background: linear-gradient($defaultGray, $defaultGray),
     url('https://source.unsplash.com/R5fIqR8nPu0')
     no-repeat center center fixed;
-    @include background-size(cover); 
-  }
+  @include background-size(cover);
+}
 
 h3 {
   margin-top: 1.5em;
