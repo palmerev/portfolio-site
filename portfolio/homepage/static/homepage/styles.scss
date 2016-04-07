@@ -1,4 +1,12 @@
 $break-small: 320px;
+
+@mixin background-size($value) {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   color: white;
   background: linear-gradient(
@@ -12,11 +20,8 @@ body {
     ),
     url('https://source.unsplash.com/R5fIqR8nPu0')
     no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+    @include background-size(cover); 
+  }
 
 h3 {
   margin-top: 1.5em;
