@@ -154,13 +154,17 @@ hr.small {
     display: table;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background: #CCC;
     background: url(https://source.unsplash.com/TV2ET43jK0w) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.subtitle {
+  font-size: 2em;
 }
 
 /* About */
