@@ -154,7 +154,7 @@ hr.small {
     display: table;
     position: relative;
     width: 100%;
-    height: 50%;
+    height: 40%;
     background: #CCC;
     background: url(https://source.unsplash.com/TV2ET43jK0w) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -167,15 +167,10 @@ hr.small {
   font-size: 2em;
 }
 
-/* About */
-
-.about {
-    padding: 50px 0;
-}
-
 /* Services */
 
-.services {
+.skills {
+    border-top: 1em solid white;
     padding: 50px 0;
 }
 
@@ -223,18 +218,6 @@ hr.small {
 
 .call-to-action .btn {
     margin: 10px;
-}
-
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
 }
 
 /* Footer */
