@@ -17,6 +17,11 @@
     <!-- Custom CSS -->
     <link href="{% static 'homepage/sb-portfolio-1.0.4/css/stylish-portfolio.css' %}" rel="stylesheet">
 
+    <!-- Calendar CSS -->
+    {# <link href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css" rel="stylesheet"> #}
+    <!-- Calendar CSS -->
+    <link href="{% static 'homepage/github-calendar.css' %}" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="{% static 'homepage/sb-portfolio-1.0.4/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -218,10 +223,18 @@
     <aside class="call-to-action bg-primary">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                <div class="col-xs-12 col-lg-12">
+                <div class="text-center">
+                  <h2>My GitHub Contributions</h2>
+                  <p class="lead">I write code every day, both for myself and for open-source projects.</p>
+                </div>
+
+                <!-- Prepare a container for your calendar. -->
+                <div class="calendar">
+                    <!-- Loading stuff -->
+                    Loading the data just for you.
+                </div>
+
                 </div>
             </div>
         </div>
@@ -297,7 +310,12 @@
         });
     });
     </script>
-
+    <script
+    src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js">
+    </script>
+    <script>
+        GitHubCalendar(".calendar", "palmerev");
+    </script>
 </body>
 
 </html>
