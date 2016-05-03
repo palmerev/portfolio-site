@@ -211,6 +211,13 @@ hr.small {
   margin-bottom: 0.2em;
   padding: 0;
 }
+
+.portfolio-item-text {
+  text-align: justify;
+  text-indent: 1em;
+  max-width: 80%;
+}
+
 .img-portfolio {
     margin: 0 auto;
 }
