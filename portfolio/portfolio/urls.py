@@ -20,5 +20,9 @@ from homepage import views as homepage_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage_views.index),
+    url(r'^$', homepage_views.index, name='homepage_index'),
+    url(r'^projects/$', homepage_views.project_list, name='homepage_project_list'),
+    url(r'^projects/(?P<project_name>\w+)/$', homepage_views.project_detail, name='homepage_project_detail'),
+    url(r'^about-site/$', homepage_views.about_site, name='homepage_about_site'),
+    url(r'^bio/$', homepage_views.bio, name='homepage_bio'),
 ]
