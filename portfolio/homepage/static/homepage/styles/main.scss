@@ -1,3 +1,5 @@
+$medDarkGreen: #44A340;
+
 /* GLOBAL STYLES */
 html, body {
   height: 100%;
@@ -6,4 +8,37 @@ html, body {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* BIO */
+.bio {
+  padding: 50px 0;
+}
+
+.bio img {
+  border: 1em solid $medDarkGreen;
+  max-width: 280px;
+}
+
+.bio-text {
+  &:before,
+  &:after {
+    content: " ";
+    display: block;
+    height: 2px;
+    max-width: 270px;
+    margin: 0 auto;
+    background-color: $medDarkGreen;
+  }
+  &:before {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+  }
+  &:after {
+    margin-top: 1.5em;
+  }
+}
+
+.call-to-action {
+  border-top: 1em solid $medDarkGreen;
 }
