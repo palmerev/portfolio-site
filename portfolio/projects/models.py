@@ -14,7 +14,7 @@ class Project(models.Model):
     short_description = models.CharField(
         max_length=255, default="No short description provided")
     long_description = models.TextField(default="No long description provided")
-    gist_url = models.URLField()
+    gist_url = models.URLField(blank=True)
     repo_url = models.URLField()
     site_url = models.URLField(blank=True)
     thumbnail = models.FilePathField(path=THUMBNAIL_DIR)
