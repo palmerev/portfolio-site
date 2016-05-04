@@ -1,0 +1,8 @@
+{% extends "projects/base-projects.html" %}
+{% load staticfiles %}
+{% block title %}
+{{ block.super }} ~ {{ slug }}
+{% endblock title %}
+{% block content %}
+This is the detail page for {{ slug }}.
+{% endblock content %}
