@@ -1,8 +1,7 @@
 # SCSS files
 *.map
 *.sass-cache
-styles.css
-main.css
+*.css
 
 # Python files
 __pycache__/
