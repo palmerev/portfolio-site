@@ -1,0 +1,22 @@
+/* GLOBAL PROJECT PAGE STYLES */
+
+/* GLOBAL STYLES */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+ul.list-inline {
+  display: inline;
+  li {
+    padding: 0;
+  }
+}
+
+.tagged-in {
+  margin-right: 0.5em;
+}
