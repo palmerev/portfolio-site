@@ -1,12 +1,11 @@
 {% extends "homepage/base.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Projects tagged with {{ tag.slug }}
+{{ block.super }} - Projects tagged with {{ tag.name }}
 {% endblock title %}
 {% block content %}
-<h1>This is the projects for tag view</h1>
+<h1>Projects associated with {{ tag.name }} ({{ tag.projects.count }})</h1>
 {% if tag.projects.count %}
-<p>Tag {{ tag.slug }} associated with {{ tag.projects.count }} project{{ tag.projects.count|pluralize }}</p>
 <ul class="project-list">
   {% for p in tag.projects.all %}
   <li>
