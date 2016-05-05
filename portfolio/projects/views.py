@@ -11,7 +11,9 @@ def project_list(request):
 
 def project_detail(request, slug):
     """Render the detail page for the project matching slug"""
-    return render(request, 'projects/project-detail.html', {'slug': slug})
+    project = Project.objects.get(slug=slug)
+    return render(
+        request, 'projects/project-detail.html', {"project": project})
 
 
 def tag_list(request):

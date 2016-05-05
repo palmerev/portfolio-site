@@ -1,8 +1,19 @@
 {% extends "projects/base-projects.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} ~ {{ slug }}
+{{ block.super }} ~ {{ project.slug }}
 {% endblock title %}
 {% block content %}
-This is the detail page for {{ slug }}.
+<h1>{{ project.name }}</h1>
+<p>
+  {{ project.short_description }}
+</p>
+<hr />
+<p>
+  {{ project.long_description }}
+</p>
+<div class="project-urls">
+<p><span>GitHub Repository:</span>{{ project.repo_url }}</p>
+<p><span>Site URL:</span>{{ project.site_url|default:"none" }}</p>
+</div>
 {% endblock content %}
