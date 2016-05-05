@@ -1,11 +1,24 @@
 {% extends "homepage/base.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Projects tagged with {{ slug }}
+{{ block.super }} - Projects tagged with {{ tag.slug }}
 {% endblock title %}
 {% block content %}
 <h1>This is the projects for tag view</h1>
-<p>
-  All projects tagged with {{ slug }}...
-</p>
+{% if tag.projects.count %}
+<p>Tag {{ tag.slug }} associated with {{ tag.projects.count }} project{{ tag.projects.count|pluralize }}</p>
+<ul class="project-list">
+  {% for p in tag.projects.all %}
+  <li>
+    <a href="{% url 'project_detail' p.slug %}" class="project-link"><!--
+    --><span class="project-name">{{ p.name }}</span><!--
+    --><span class="delimiter">--</span><!--
+    --><span class="project-description">{{ p.short_description }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no projects associated with this tag.</p>
+{% endif %}
 {% endblock content %}

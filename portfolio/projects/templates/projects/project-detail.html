@@ -8,6 +8,19 @@
 <p>
   {{ project.short_description }}
 </p>
+<div class="tag-list">
+<span class="tagged-in">Tagged in:</span><!--
+--><ul class="list-inline">
+    {% for tag in project.tags.all %}
+    {% if forloop.last %} {# delimit items with a comma, except for the last #}
+    <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li>
+    {% else %}
+    <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li><!--
+    --><span>,</span>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
 <hr />
 <p>
   {{ project.long_description }}

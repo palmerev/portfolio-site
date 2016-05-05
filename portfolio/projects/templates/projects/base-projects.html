@@ -3,6 +3,9 @@
 {% block title %}
 {{ block.super }} - Projects
 {% endblock title %}
+{% block custom_stylesheets %}
+<link rel="stylesheet" href="{% static 'projects/styles/projects.css' %}" media="screen" charset="utf-8">
+{% endblock custom_stylesheets %}
 {% block content %}
 <h1>This is the base-projects template</h1>
 {% endblock content %}
