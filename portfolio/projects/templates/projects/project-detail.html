@@ -15,5 +15,6 @@
 <div class="project-urls">
 <p><span>GitHub Repository:</span>{{ project.repo_url }}</p>
 <p><span>Site URL:</span>{{ project.site_url|default:"none" }}</p>
+<a class="btn btn-info text-center" href="{% url 'project_list' %}">Back to Projects</a>
 </div>
 {% endblock content %}
