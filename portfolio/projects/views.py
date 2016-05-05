@@ -18,9 +18,11 @@ def project_detail(request, slug):
 
 def tag_list(request):
     """Render the list of all tags"""
-    return render(request, 'projects/tag-list.html')
+    tags = Tag.objects.all()
+    return render(request, 'projects/tag-list.html', {'tags': tags})
 
 
 def projects_for_tag(request, slug):
     """Render the list of projects for the tag matching slug"""
-    return render(request, 'projects/projects-for-tag.html', {'slug': slug})
+    tag = Tag.objects.get(slug=slug)
+    return render(request, 'projects/projects-for-tag.html', {'tag': tag})
