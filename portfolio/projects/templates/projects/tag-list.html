@@ -1,11 +1,18 @@
-{% extends "homepage/base.html" %}
+{% extends "projects/base-projects.html" %}
 {% load staticfiles %}
 {% block title %}
 {{ block.super }} - Tag List
 {% endblock title %}
 {% block content %}
-<h1>This is the tag list view</h1>
-<p>
-  All tags listed here...
-</p>
+<h1>Tags ({{ tags|length }})</h1>
+<ul class="tag-list">
+  {% for tag in tags %}
+  <li class="tag">
+    <a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a> associated with
+    {{ tag.projects.count }} project{{ tag.projects.count|pluralize }}
+  </li>
+  {% empty %}
+  <li class="italic">There are no tags available.</li>
+  {% endfor %}
+</ul>
 {% endblock content %}
