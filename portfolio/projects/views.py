@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
+from .models import Project, Tag
+
 
 def project_list(request):
     """Render the list of all projects"""
-    return render(request, 'projects/project-list.html')
+    projects = Project.objects.all()
+    return render(request, 'projects/project-list.html', {"projects": projects})
 
 
 def project_detail(request, slug):

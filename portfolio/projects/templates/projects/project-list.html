@@ -5,5 +5,15 @@
 {% endblock title %}
 {% block content %}
 <h1>Projects</h1>
-This is the project list page.
+<ul>
+  {% for p in projects %}
+    <li>
+      <a href="{% url 'project_detail' p.slug %}" class="project-link"><!--
+      --><span class="project-name">{{ p.name }}</span><!--
+      --><span class="delimiter">--</span><!--
+      --><span class="project-description">{{ p.short_description }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 {% endblock content %}
