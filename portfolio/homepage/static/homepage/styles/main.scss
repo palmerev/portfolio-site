@@ -1,4 +1,6 @@
-$medDarkGreen: #44A340;
+/* DEFINITIONS */
+$primary: #337AB7;
+$darkGreen: #1E6823;
 
 /* GLOBAL STYLES */
 html, body {
@@ -8,6 +10,31 @@ html, body {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: $primary;
+}
+
+section, footer {
+  background-color: white;
+  box-shadow: 10px 10px 3px 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  margin: 2em;
+  &::before,
+  &::after {
+    content: " ";
+    display: block;
+    height: 3px;
+    min-width: 100px;
+    max-width: 75%;
+    margin: 5px auto;
+    background-color: $darkGreen;
+  }
+  &::after {
+    margin-top: 2.5em;
+  }
+}
+
+i.text-primary {
+  color: white;
 }
 
 /* BIO */
@@ -16,7 +43,7 @@ body {
 }
 
 .bio img {
-  border: 1em solid $medDarkGreen;
+  border: 5px solid $darkGreen;
   max-width: 280px;
 }
 
@@ -28,7 +55,7 @@ body {
     height: 2px;
     max-width: 270px;
     margin: 0 auto;
-    background-color: $medDarkGreen;
+    background-color: $darkGreen;
   }
   &:before {
     margin-top: 2em;
@@ -42,5 +69,5 @@ body {
 .call-to-action,
 .portfolio,
 .bio {
-  border-top: 1em solid $medDarkGreen;
+
 }

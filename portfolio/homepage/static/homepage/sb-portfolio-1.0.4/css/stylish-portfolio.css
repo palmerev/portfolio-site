@@ -156,6 +156,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 40%;
+    border-bottom: 1em solid #fff;
     background: #CCC;
     background: url(https://source.unsplash.com/TV2ET43jK0w) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -171,7 +172,6 @@ hr.small {
 /* Skills */
 
 .skills {
-    border-top: 1em solid white;
     padding: 50px 0;
 }
 

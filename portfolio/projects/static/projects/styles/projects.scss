@@ -1,5 +1,8 @@
-/* GLOBAL PROJECT PAGE STYLES */
+/* DEFINITIONS */
 $primary: #337AB7;
+$darkGreen: #1E6823;
+
+/* GLOBAL PROJECT PAGE STYLES */
 html, body {
   height: 100%;
   width: 100%;
@@ -8,24 +11,37 @@ html, body {
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: $primary;
-    /* Argyle pattern by Anna Kassner, found at
-    http://lea.verou.me/css3patterns/#argyle */
-    background-image:
-      repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-      repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-      linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-      linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-    background-size: 70px 120px;
-    /* end Argyle */
-    padding: 2em;
+}
 
+section, footer, main {
+  background-color: white;
+  box-shadow: 10px 10px 3px 3px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 2em;
+  &::before,
+  &::after {
+    content: " ";
+    display: block;
+    height: 3px;
+    min-width: 100px;
+    max-width: 75%;
+    margin: 5px auto;
+    background-color: $darkGreen;
+  }
+  &::before {
+    margin-bottom: 2.5em;
+  }
+  &::after {
+    margin-top: 2.5em;
+  }
 }
 
 .container {
   width: 100%;
   min-height: 50%;
   padding-bottom: 2em;
-  background-color: #fff;
 }
 
 .tag-list {
