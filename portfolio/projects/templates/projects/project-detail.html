@@ -4,30 +4,41 @@
 {{ block.super }} ~ {{ project.slug }}
 {% endblock title %}
 {% block content %}
-<h1>{{ project.name }}</h1>
-<p>
-  {{ project.short_description }}
-</p>
-<div class="tag-list">
-<span class="tagged-in">Tagged in:</span><!--
---><ul class="list-inline">
-    {% for tag in project.tags.all %}
-    {% if forloop.last %} {# delimit items with a comma, except for the last #}
-    <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li>
-    {% else %}
-    <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li><!--
-    --><span>,</span>
-    {% endif %}
-    {% endfor %}
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12-sm col-10-lg">
+      <h1>{{ project.name }}</h1>
+      <p class="description">
+        {{ project.short_description }}
+      </p>
+      <hr />
+      <p class="description">
+        {{ project.long_description }}
+      </p>
+      <div class="text-center">
+        <ul class="project-urls list-inline">
+          <li><a class="btn btn-info" href="{{ project.repo_url }}" target="blank_">GitHub Repository</a></li>
+          {% if project.site_url %}
+          <li><a class="btn btn-info" href="{{ project.site_url }}" target="blank_">Site URL</a></li>
+          {% endif %}
+        </ul>
+        <a class="btn btn-primary text-center" href="{% url 'project_list' %}">Back to Projects</a>
+        <div class="tag-list text-left">
+        <span class="tagged-in">Tagged in:</span><!--
+        --><ul class="list-inline">
+            {% for tag in project.tags.all %}
+            {% if forloop.last %} {# delimit items with a comma, except for the last #}
+            <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li>
+            {% else %}
+            <li><a href="{% url 'projects_for_tag' tag.slug %}">{{ tag.name }}</a></li><!--
+            --><span>,</span>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<hr />
-<p>
-  {{ project.long_description }}
-</p>
-<div class="project-urls">
-<p><span>GitHub Repository:</span>{{ project.repo_url }}</p>
-<p><span>Site URL:</span>{{ project.site_url|default:"none" }}</p>
-<a class="btn btn-info text-center" href="{% url 'project_list' %}">Back to Projects</a>
-</div>
+
 {% endblock content %}
