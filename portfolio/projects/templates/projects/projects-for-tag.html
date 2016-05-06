@@ -1,10 +1,10 @@
-{% extends "homepage/base.html" %}
+{% extends "projects/base-projects.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Projects tagged with {{ tag.name }}
+{{ block.super }} ~ Projects tagged with {{ tag.name }}
 {% endblock title %}
-{% block content %}
-<h1>Projects associated with {{ tag.name }} ({{ tag.projects.count }})</h1>
+{% block main %}
+<h3>Projects associated with {{ tag.name }} ({{ tag.projects.count }})</h3>
 {% if tag.projects.count %}
 <ul class="project-list">
   {% for p in tag.projects.all %}
@@ -20,4 +20,4 @@
 {% else %}
 <p>There are no projects associated with this tag.</p>
 {% endif %}
-{% endblock content %}
+{% endblock main %}

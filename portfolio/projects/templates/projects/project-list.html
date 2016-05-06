@@ -1,13 +1,12 @@
-{% extends "homepage/base.html" %}
+{% extends "projects/base-projects.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Projects
+{{ block.super }} ~ Projects
 {% endblock title %}
 {% block custom_stylesheets %}
 <link rel="stylesheet" href="{% static 'projects/styles/projects.css' %}" media="screen" charset="utf-8">
 {% endblock custom_stylesheets %}
-{% block content %}
-<h1>Projects</h1>
+{% block main %}
 <ul>
   {% for p in projects %}
     <li>
@@ -19,5 +18,7 @@
     </li>
   {% endfor %}
 </ul>
-<a class="btn btn-info text-center" href={% url 'homepage_index' %}>Back Home</a>
-{% endblock content %}
+<div class="text-center">
+  <a class="btn btn-primary text-center" href={% url 'homepage_index' %}>Back Home</a>
+</div>
+{% endblock main %}

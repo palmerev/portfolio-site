@@ -1,11 +1,22 @@
 {% extends "homepage/base.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Projects
+{{ block.super }} ~ Projects
 {% endblock title %}
 {% block custom_stylesheets %}
 <link rel="stylesheet" href="{% static 'projects/styles/projects.css' %}" media="screen" charset="utf-8">
 {% endblock custom_stylesheets %}
 {% block content %}
-<h1>This is the base-projects template</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-10 col-lg-offset-1">
+      <h2 class="text-center">Projects</h2>
+      <main>
+      {% block main %}
+      <h2>This is the base-projects template</h2>
+      {% endblock main %}
+      </main>
+    </div>
+  </div>
+</div>
 {% endblock content %}

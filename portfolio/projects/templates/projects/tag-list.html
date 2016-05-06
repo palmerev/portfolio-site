@@ -1,10 +1,10 @@
 {% extends "projects/base-projects.html" %}
 {% load staticfiles %}
 {% block title %}
-{{ block.super }} - Tag List
+{{ block.super }} ~ Tag List
 {% endblock title %}
-{% block content %}
-<h1>Tags ({{ tags|length }})</h1>
+{% block main %}
+<h3>Tags ({{ tags|length }})</h3>
 <ul class="tag-list">
   {% for tag in tags %}
   <li class="tag">
@@ -15,4 +15,4 @@
   <li class="italic">There are no tags available.</li>
   {% endfor %}
 </ul>
-{% endblock content %}
+{% endblock main %}
