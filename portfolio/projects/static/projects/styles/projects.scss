@@ -1,6 +1,5 @@
 /* GLOBAL PROJECT PAGE STYLES */
-
-/* GLOBAL STYLES */
+$primary: #337AB7;
 html, body {
   height: 100%;
   width: 100%;
@@ -8,10 +7,34 @@ html, body {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: $primary;
+    /* Argyle pattern by Anna Kassner, found at
+    http://lea.verou.me/css3patterns/#argyle */
+    background-image:
+      repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+      linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+      linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+    /* end Argyle */
+    padding: 2em;
+
+}
+
+.container {
+  width: 100%;
+  min-height: 50%;
+  padding-bottom: 2em;
+  background-color: #fff;
 }
 
 .tag-list {
   margin-top: 1.5em;
+}
+
+.project-content {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 .description {
   font-size: 2rem;
