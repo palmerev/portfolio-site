@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
 
 from homepage import views as homepage_views
@@ -25,3 +27,6 @@ urlpatterns = [
     url(r'^about-site/$', homepage_views.about_site, name='homepage_about_site'),
     url(r'^bio/$', homepage_views.bio, name='homepage_bio'),
 ]
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
