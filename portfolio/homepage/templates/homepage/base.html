@@ -16,9 +16,9 @@
     </title>
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'homepage/sb-portfolio-1.0.4/css/bootstrap.min.css' %}" rel="stylesheet">
-    {% block custom_stylesheets %}
     <!-- Custom CSS -->
     <link href="{% static 'homepage/sb-portfolio-1.0.4/css/stylish-portfolio.css' %}" rel="stylesheet">
+    {% block custom_stylesheets %}
     <link href="{% static 'homepage/styles/main.css' %}" rel="stylesheet">
 
     <!-- Calendar CSS -->
@@ -39,8 +39,79 @@
     {% endblock head %}
   </head>
   <body>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            {% block nav_links %}
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#skills" onclick = $("#menu-close").click(); >Skills</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >My Work</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li>
+            {% endblock nav_links %}
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1 class="main-title">Evan Palmer</h1>
+            <p class="subtitle">Web Developer</p>
+            <h2>I need to put some stuff here!</h2>
+            <p class="lead">This is a class='lead' paragraph</p>
+        </div>
+    </header>
     {% block content %}
       This is the default content.
     {% endblock content %}
+    <!-- jQuery -->
+    <script src="{% static 'homepage/sb-portfolio-1.0.4/js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'homepage/sb-portfolio-1.0.4/js/bootstrap.min.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
   </body>
 </html>

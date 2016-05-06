@@ -6,42 +6,9 @@
 {% endblock title %}
 
 {% block content %}
-    <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
-            </li>
-            <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
-            </li>
-            <li>
-                <a href="#skills" onclick = $("#menu-close").click(); >Skills</a>
-            </li>
-            <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Header -->
-    <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1 class="main-title">Evan Palmer</h1>
-            <p class="subtitle">Web Developer</p>
-            <h2>I need to put some stuff here!</h2>
-            <p class="lead">This is a class='lead' paragraph</p>
-        </div>
-    </header>
-
     <!-- Skills -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="skills" class="skills bg-primary">
+    <section id="skills" class="skills">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -184,7 +151,7 @@
                         <div class="clearfix visible-lg visible-md"></div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">See All Projects</a>
+                    <a href="{% url 'project_list' %}" class="btn btn-dark">See All Projects</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -193,7 +160,7 @@
         <!-- /.container -->
     </section>
 
-    <aside class="call-to-action bg-primary">
+    <section class="call-to-action">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-lg-12">
@@ -213,7 +180,7 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </section>
 
     <section class="bio">
       <div class="container">
@@ -273,43 +240,6 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="{% static 'homepage/sb-portfolio-1.0.4/js/jquery.js' %}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'homepage/sb-portfolio-1.0.4/js/bootstrap.min.js' %}"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script>
     <script src="{% static 'homepage/js/github-calendar.min.js' %}" charset="utf-8"></script>
     <script>
         GitHubCalendar(".calendar", "palmerev");
