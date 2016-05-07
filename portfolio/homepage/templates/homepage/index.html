@@ -162,24 +162,40 @@
 
     <section id="github-contributions" class="github-contributions">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-lg-12">
-                <div class="text-center">
-                  <h2>My GitHub Contributions</h2>
-                  <hr class="small">
-                  <p class="lead">I write code every day, both for myself and for open-source projects.</p>
-                </div>
+          <div class="row">
+            <div class="col-xs-12 col-lg-12">
+              <div class="text-center">
+                <h2>My GitHub Contributions</h2>
+                <hr class="small">
+                <p class="lead">I write code every day, both for myself and for open-source projects.</p>
+              </div>
 
-                <!-- container for the calendar. -->
-                <div class="calendar hidden-xs hidden-sm">
-                    <!-- Loading stuff -->
-                    Loading the data just for you.
+              <!-- container for the calendar. -->
+              <div class="calendar hidden-xs hidden-sm">
+                  <!-- Loading stuff -->
+                  Loading the data just for you.
+              </div>
+              <div class="text-center small-device-info visible-xs visible-sm">
+                <p>Your screen is too small to view the GitHub Calendar. Please visit <a class="github-link" href="https://github.com/palmerev" target="_blank">my GitHub profile</a> to see my contributions.</p>
+              </div>
+              <hr class="small">
+              <div class="notable-contributions">
+                <p class="lead text-center">Besides the projects included above, I've also made small contributions to some others.</p>
+                <div class="row small-contrib-row">
+                  <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-2 small-contrib-col">
+                    <h3 class="text-center">OpenHatch Documentation</h3>
+                    <p>I improved the README for <a href="https://github.com/palmerev/oh-mainline/tree/readme_future_plans" target="blank_">OpenHatch's mainline repository</a>, so that other developers like me wouldn't have to look through the issue-tracker to realize that the project is undergoing a major transition from it's current codebase.</p>
+                  </div>
+                  <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-0 small-contrib-col">
+                    <h3 class="text-center">github-calendar.js</h3>
+                    <p>I fixed a bug in <a href="https://github.com/palmerev/github-calendar" target="blank_">github-calendar.js</a> (used above) that kept the calendar from loading properly if new contributions were processed since the last load. I also let the maintainer know about undocumented build dependencies.</p>
+                  </div>
                 </div>
-                <div class="text-center small-device-info visible-xs visible-sm">
-                  <p>Your screen is too small to view the GitHub Calendar. Please visit <a class="github-link" href="https://github.com/palmerev" target="_blank">my GitHub profile</a> to see my contributions.</p>
-                </div>
-            </div>
-        </div>
+              </div>
+
+          </div> <!-- end outer .col -->
+        </div> <!-- end .row -->
+      </div> <!-- end .container -->
     </section>
 
     <section id="bio" class="bio">
