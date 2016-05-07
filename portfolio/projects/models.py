@@ -22,6 +22,7 @@ class Project(models.Model):
     gist_url = models.URLField(blank=True)
     repo_url = models.URLField()
     site_url = models.URLField(blank=True)
+    thumbnail = models.ImageField(blank=True)
 
     def __str__(self):
         return "<Project: {}>".format(self.slug)
