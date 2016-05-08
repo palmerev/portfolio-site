@@ -6,9 +6,15 @@
 {% block main %}
 <div class="project-content">
   <h3>{{ project.name }}</h3>
-  {% if project.thumbnail %}
-    <img class="img-responsive" src="{{ media_url }}{{ project.thumbnail }}" alt="thumbnail image for {{ project.name }}" />
-  {% endif %}
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-sm-12">
+      {% if project.thumbnail %}
+        <img class="img-responsive center-block" src="{{ media_url }}{{ project.thumbnail }}" alt="thumbnail image for {{ project.name }}" />
+      {% else %}
+        <img class="img-responsive center-block" src="{% static 'PROJECT-IMAGE-COMING-SOON.jpg' %}" alt="project image coming soon" />
+      {% endif %}
+    </div>
+  </div>
   <p class="lead">
     {{ project.short_description }}
   </p>
