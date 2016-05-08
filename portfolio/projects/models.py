@@ -16,8 +16,7 @@ class Project(models.Model):
     name = models.CharField(max_length=64)
     slug = models.SlugField()
     tags = models.ManyToManyField(Tag, related_name='projects', blank=True)
-    short_description = models.CharField(
-        max_length=255, default="No short description provided")
+    short_description = models.TextField(default="No short description provided")
     long_description = models.TextField(default="No long description provided")
     gist_url = models.URLField(blank=True)
     repo_url = models.URLField()
