@@ -7,17 +7,30 @@
 <link rel="stylesheet" href="{% static 'projects/styles/projects.css' %}" media="screen" charset="utf-8">
 {% endblock custom_stylesheets %}
 {% block main %}
-<ul>
+<div class="container">
+  <div class="row">
   {% for p in projects %}
-    <li>
-      <a href="{% url 'project_detail' p.slug %}" class="project-link"><!--
-      --><span class="project-name">{{ p.name }}</span><!--
-      --><span class="delimiter">--</span><!--
-      --><span class="project-description">{{ p.short_description }}</span>
-      </a>
-    </li>
+    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+      <div class="portfolio-item thumbnail">
+          <a href="#" target="blank_">
+              <img class="img-portfolio img-responsive" src="{{ media_url }}{{ p.thumbnail }}">
+          </a>
+          <div>
+            <h3 class="portfolio-item-heading">{{ p.name }}</h3>
+            <p class="portfolio-item-text center-block">
+              {{ p.short_description }}
+            </p>
+            <div class="btn-group" role="group" aria-label="thumbnail-button-group">
+              <a href="{{ p.repo_url }}" class="btn btn-default">View Source</a>
+              <a href="{% url 'project_detail' p.slug %}" class="btn btn-default">Details</a>
+            </div>
+          </div>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+  </div>
+</div>
+
 <div class="text-center">
   <a class="btn btn-primary text-center" href={% url 'homepage_index' %}>Back Home</a>
 </div>
