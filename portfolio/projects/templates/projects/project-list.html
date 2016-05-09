@@ -15,12 +15,12 @@
     <div class="col-lg-4 col-md-6 col-sm-12 text-center">
       <div class="portfolio-item thumbnail">
           <a href="#" target="blank_">
-              <img class="img-portfolio img-responsive" src="{{ media_url }}{{ p.thumbnail }}">
+              <img class="img-portfolio img-responsive" src="{% static 'PROJECT-IMAGE-COMING-SOON.jpg' %}">
           </a>
           <div>
             <h3 class="portfolio-item-heading">{{ p.name }}</h3>
             <p class="portfolio-item-text center-block">
-              {{ p.short_description }}
+              {{ p.short_description|truncatechars:100 }}
             </p>
             <div class="btn-group" role="group" aria-label="thumbnail-button-group">
               <a href="{{ p.repo_url }}" class="btn btn-default">View Source</a>
