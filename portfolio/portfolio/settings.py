@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage',
     'projects',
+    'mathfilters',
 ]
 
 MIDDLEWARE_CLASSES = [

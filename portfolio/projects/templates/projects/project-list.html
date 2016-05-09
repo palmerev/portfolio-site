@@ -1,5 +1,7 @@
 {% extends "projects/base-projects.html" %}
 {% load staticfiles %}
+{% load mathfilters %}
+
 {% block title %}
 {{ block.super }}
 {% endblock title %}
@@ -27,6 +29,16 @@
           </div>
       </div>
     </div>
+    {% if forloop.counter|mod:3 == 0 and forloop.counter|mod:2 != 0 %}
+      {# every third column, clearfix visible-lg #}
+      <div class="clearfix visible-lg"></div>
+    {% elif forloop.counter|mod:2 == 0 and forloop.counter|mod:3 != 0 %}
+      {# every second column, clearfix visible-md #}
+      <div class="clearfix visible-md"></div>
+    {% elif forloop.counter|mod:2 == 0 and forloop.counter|mod:3 == 0 %}
+      {# every sixth column, clearfix visible-md visible-lg #}
+      <div class="clearfix visible-md visible-lg"></div>
+    {% endif %}
   {% endfor %}
   </div>
 </div>
