@@ -6,6 +6,10 @@
 {% block main %}
 <div class="project-content">
   <h3>{{ project.name }}</h3>
+  <p class="lead">
+    {{ project.short_description }}
+  </p>
+  <hr />
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 col-sm-12">
       {% if project.thumbnail %}
@@ -16,12 +20,22 @@
     </div>
   </div>
   <p class="lead">
-    {{ project.short_description }}
-  </p>
-  <hr />
-  <p class="lead">
     {{ project.long_description }}
   </p>
+  <h4>Some code snippets</h4>
+  <div class="code-snippets">
+    {% for snippet in project.snippets.all %}
+      <div class="snippet">
+        <pre>
+        {{ snippet.code }}
+        </pre>
+      </div>
+    {% empty %}
+    <p>
+      No snippets available for this project.
+    </p>
+    {% endfor %}
+  </div>
   <div class="text-center">
     <ul class="project-urls list-inline">
       <li><a class="btn btn-info" href="{{ project.repo_url }}" target="blank_">GitHub Repository</a></li>
