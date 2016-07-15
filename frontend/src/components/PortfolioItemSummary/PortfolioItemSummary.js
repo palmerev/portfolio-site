@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
-const PortfolioItem = (props) => (
+const PortfolioItemSummary = (props) => (
   <div className="portfolio-item-root">
     <Link to={`/detail/${props.slug}`}>
       <h2 className="portfolio-item-title">{props.title}</h2>
@@ -10,10 +10,10 @@ const PortfolioItem = (props) => (
   </div>
 )
 
-PortfolioItem.propTypes = {
+PortfolioItemSummary.propTypes = {
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
 }
 
-export default PortfolioItem
+export default PortfolioItemSummary

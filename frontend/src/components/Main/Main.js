@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react'
-import PortfolioItem from '../PortfolioItem/PortfolioItem.js'
+import PortfolioItemSummary from '../PortfolioItemSummary/PortfolioItemSummary.js'
 import portfolioInfo from '../../fixtures/portfolio-info'
 
 const Main = (props) => {
   return (
     <div>
       {portfolioInfo.map((item, i, self) => (
-        <PortfolioItem
+        <PortfolioItemSummary
           key={i}
           slug={item.slug}
           title={item.title}

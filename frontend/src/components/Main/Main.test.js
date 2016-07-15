@@ -10,9 +10,9 @@ describe('Main component', function () {
   it('renders without exploding', function noExplode() {
     expect(shallow(<Main />)).toExist
   })
-  it('renders the correct number of PortfolioItems', function hasItems() {
+  it('renders the correct number of PortfolioItemSummarys', function hasItems() {
     expect(
-      shallow(<Main />).find('PortfolioItem').length)
+      shallow(<Main />).find('PortfolioItemSummary').length)
       .toBeGreaterThan(0)
       .toEqual(numItems)
   })
